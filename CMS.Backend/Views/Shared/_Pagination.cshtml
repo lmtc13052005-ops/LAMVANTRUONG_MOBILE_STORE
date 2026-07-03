@@ -1,0 +1,30 @@
+@{
+    // Partial phân trang dùng chung cho ProductGrid / PostGrid (Buổi 4 - tiêu chí #14).
+    // Yêu cầu set: ViewBag.CurrentPage, ViewBag.TotalPages, ViewBag.PageAction (tên action).
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    string pageAction = ViewBag.PageAction ?? "Index";
+}
+@if (totalPages > 1)
+{
+    <div class="flex items-center justify-center py-4">
+        <nav class="flex items-center">
+            <a asp-action="@pageAction" asp-route-page="@(currentPage - 1)"
+               class="@(currentPage <= 1 ? "pointer-events-none opacity-40" : "") first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center bg-white text-lightBlue-600 border border-blueGray-200">
+                <i class="fas fa-chevron-left -ml-px"></i>
+            </a>
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <a asp-action="@pageAction" asp-route-page="@i"
+                   class="text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center border @(i == currentPage ? "bg-lightBlue-600 text-white border-lightBlue-600" : "bg-white text-lightBlue-600 border-blueGray-200")"
+                   style="@(i == currentPage ? "background-color:#0284c7;border-color:#0284c7" : "")">
+                    @i
+                </a>
+            }
+            <a asp-action="@pageAction" asp-route-page="@(currentPage + 1)"
+               class="@(currentPage >= totalPages ? "pointer-events-none opacity-40" : "") text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center bg-white text-lightBlue-600 border border-blueGray-200">
+                <i class="fas fa-chevron-right -mr-px"></i>
+            </a>
+        </nav>
+    </div>
+}

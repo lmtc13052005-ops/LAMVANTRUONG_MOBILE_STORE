@@ -1,0 +1,215 @@
+@using CMS.Data.Entities
+@{
+    ViewData["Title"] = "Bảng điều khiển";
+    ViewData["ActiveMenu"] = "dashboard";
+    Layout = "_AdminLayout";
+
+    var recentOrders = ViewBag.RecentOrders as List<Order> ?? new List<Order>();
+    decimal totalRevenue = ViewBag.TotalRevenue ?? 0m;
+    int pendingOrders = ViewBag.PendingOrders ?? 0;
+
+    string StatusText(int s) => s switch { 0 => "Chờ duyệt", 1 => "Đang giao", 2 => "Hoàn thành", _ => "?" };
+    string StatusStyle(int s) => s switch {
+        0 => "background:#fef3c7;color:#d97706;",
+        1 => "background:#dbeafe;color:#2563eb;",
+        2 => "background:#dcfce7;color:#16a34a;",
+        _ => ""
+    };
+}
+
+<!-- ===== KPI CARDS ===== -->
+<div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:24px;">
+    @{
+        var kpis = new[] {
+            new { Label="Đơn hàng", Value=((int)ViewBag.OrderCount).ToString(), Icon="fa-bag-shopping", Color="#6366f1", Bg="#eef2ff", Sub=$"{pendingOrders} chờ duyệt" },
+            new { Label="Doanh thu", Value=totalRevenue.ToString("#,##0") + "₫", Icon="fa-circle-dollar-to-slot", Color="#16a34a", Bg="#f0fdf4", Sub="Đơn hoàn thành" },
+            new { Label="Khách hàng", Value=((int)ViewBag.CustomerCount).ToString(), Icon="fa-users", Color="#0ea5e9", Bg="#f0f9ff", Sub="Đã đăng ký" },
+            new { Label="Sản phẩm", Value=((int)ViewBag.ProductCount).ToString(), Icon="fa-mobile-screen", Color="#f59e0b", Bg="#fffbeb", Sub=((int)ViewBag.CategoryProductCount) + " ngành hàng" },
+        };
+    }
+    @foreach (var k in kpis)
+    {
+        <div style="background:#fff; border-radius:14px; padding:20px 22px; border:1px solid #f1f5f9; box-shadow:0 1px 3px rgba(0,0,0,.05);">
+            <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:14px;">
+                <div>
+                    <div style="font-size:11.5px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px;">@k.Label</div>
+                    <div style="font-size:22px; font-weight:800; color:#1e293b; line-height:1;">@k.Value</div>
+                </div>
+                <div style="width:42px; height:42px; border-radius:12px; background:@k.Bg; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <i class="fas @k.Icon" style="color:@k.Color; font-size:17px;"></i>
+                </div>
+            </div>
+            <div style="font-size:12px; color:#94a3b8;">@k.Sub</div>
+        </div>
+    }
+</div>
+
+<!-- ===== CHARTS ROW ===== -->
+<div style="display:grid; grid-template-columns:1.5fr 1fr; gap:18px; margin-bottom:24px;">
+
+    <!-- Line chart: Đơn hàng theo tháng -->
+    <div style="background:#fff; border-radius:14px; padding:22px 24px; border:1px solid #f1f5f9; box-shadow:0 1px 3px rgba(0,0,0,.05);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div>
+                <div style="font-size:14px; font-weight:700; color:#1e293b;">Đơn hàng theo tháng</div>
+                <div style="font-size:12px; color:#94a3b8; margin-top:2px;">6 tháng gần nhất</div>
+            </div>
+            <div style="font-size:11.5px; font-weight:600; color:#16a34a; background:#f0fdf4; padding:4px 10px; border-radius:20px; border:1px solid #dcfce7;">
+                <i class="fas fa-chart-line" style="margin-right:4px;"></i>Xu hướng
+            </div>
+        </div>
+        <canvas id="ordersChart" height="130"></canvas>
+    </div>
+
+    <!-- Bar chart: Doanh thu theo tháng -->
+    <div style="background:#fff; border-radius:14px; padding:22px 24px; border:1px solid #f1f5f9; box-shadow:0 1px 3px rgba(0,0,0,.05);">
+        <div style="margin-bottom:20px;">
+            <div style="font-size:14px; font-weight:700; color:#1e293b;">Doanh thu theo tháng</div>
+            <div style="font-size:12px; color:#94a3b8; margin-top:2px;">Đơn đã hoàn thành (₫)</div>
+        </div>
+        <canvas id="revenueChart" height="130"></canvas>
+    </div>
+</div>
+
+<!-- ===== BOTTOM ROW ===== -->
+<div style="display:grid; grid-template-columns:1.6fr 1fr; gap:18px;">
+
+    <!-- Đơn hàng gần nhất -->
+    <div style="background:#fff; border-radius:14px; border:1px solid #f1f5f9; box-shadow:0 1px 3px rgba(0,0,0,.05); overflow:hidden;">
+        <div style="padding:18px 22px 14px; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:14px; font-weight:700; color:#1e293b;">Đơn hàng gần nhất</div>
+            <a asp-controller="Order" asp-action="Index" style="font-size:12px; color:#16a34a; font-weight:600; text-decoration:none;">Xem tất cả →</a>
+        </div>
+        <table style="width:100%; border-collapse:collapse; font-size:13px;">
+            <thead>
+                <tr style="background:#f8fafc;">
+                    <th style="padding:10px 20px; text-align:left; font-size:11.5px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.4px;">Mã ĐH</th>
+                    <th style="padding:10px 20px; text-align:left; font-size:11.5px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.4px;">Khách hàng</th>
+                    <th style="padding:10px 20px; text-align:left; font-size:11.5px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.4px;">Tổng tiền</th>
+                    <th style="padding:10px 20px; text-align:left; font-size:11.5px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:.4px;">Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!recentOrders.Any())
+                {
+                    <tr><td colspan="4" style="padding:32px 20px; text-align:center; color:#cbd5e1; font-size:13px;">Chưa có đơn hàng nào</td></tr>
+                }
+                @foreach (var o in recentOrders)
+                {
+                    <tr style="border-top:1px solid #f8fafc;">
+                        <td style="padding:11px 20px; font-weight:700; color:#6366f1;">#@o.Id</td>
+                        <td style="padding:11px 20px; color:#334155;">@(o.Customer?.FullName ?? "—")</td>
+                        <td style="padding:11px 20px; color:#334155; font-weight:600;">@o.TotalAmount.ToString("#,##0")₫</td>
+                        <td style="padding:11px 20px;">
+                            <span style="font-size:11.5px; font-weight:600; padding:3px 9px; border-radius:20px; @StatusStyle(o.Status)">@StatusText(o.Status)</span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Truy cập nhanh + Thống kê nhỏ -->
+    <div style="display:flex; flex-direction:column; gap:16px;">
+        <!-- Mini stats -->
+        <div style="background:#fff; border-radius:14px; padding:20px 22px; border:1px solid #f1f5f9; box-shadow:0 1px 3px rgba(0,0,0,.05);">
+            <div style="font-size:14px; font-weight:700; color:#1e293b; margin-bottom:16px;">Nội dung</div>
+            @{
+                var miniStats = new[] {
+                    new { Label="Bài viết", Value=(int)ViewBag.PostCount, Icon="fa-newspaper", Color="#8b5cf6" },
+                    new { Label="Danh mục bài viết", Value=(int)ViewBag.CategoryProductCount, Icon="fa-folder-open", Color="#f59e0b" },
+                    new { Label="Tài khoản QT", Value=(int)ViewBag.UserCount, Icon="fa-user-shield", Color="#64748b" },
+                };
+            }
+            @foreach (var s in miniStats)
+            {
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid #f8fafc;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <i class="fas @s.Icon" style="color:@s.Color; width:16px; text-align:center;"></i>
+                        <span style="font-size:13px; color:#475569;">@s.Label</span>
+                    </div>
+                    <span style="font-size:14px; font-weight:800; color:#1e293b;">@s.Value</span>
+                </div>
+            }
+        </div>
+
+        <!-- Truy cập nhanh -->
+        <div style="background:#fff; border-radius:14px; padding:20px 22px; border:1px solid #f1f5f9; box-shadow:0 1px 3px rgba(0,0,0,.05);">
+            <div style="font-size:14px; font-weight:700; color:#1e293b; margin-bottom:14px;">Truy cập nhanh</div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+                <a asp-controller="Product" asp-action="Create" style="display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:9px; background:#f0fdf4; color:#16a34a; text-decoration:none; font-size:13px; font-weight:600;">
+                    <i class="fas fa-plus" style="font-size:12px;"></i> Thêm sản phẩm mới
+                </a>
+                <a asp-controller="Post" asp-action="Create" style="display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:9px; background:#f0f9ff; color:#0ea5e9; text-decoration:none; font-size:13px; font-weight:600;">
+                    <i class="fas fa-plus" style="font-size:12px;"></i> Thêm bài viết mới
+                </a>
+                <a asp-controller="Order" asp-action="Index" style="display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:9px; background:#fef3c7; color:#d97706; text-decoration:none; font-size:13px; font-weight:600;">
+                    <i class="fas fa-bag-shopping" style="font-size:12px;"></i>
+                    Duyệt đơn hàng @(pendingOrders > 0 ? $"({pendingOrders} chờ)" : "")
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+    const monthLabels = @Html.Raw(ViewBag.MonthLabels ?? "[]");
+    const monthlyOrders = @Html.Raw(ViewBag.MonthlyOrders ?? "[]");
+    const monthlyRevenue = @Html.Raw(ViewBag.MonthlyRevenue ?? "[]");
+
+    // Chart 1: Orders line
+    new Chart(document.getElementById('ordersChart'), {
+        type: 'line',
+        data: {
+            labels: monthLabels,
+            datasets: [{
+                label: 'Đơn hàng',
+                data: monthlyOrders,
+                borderColor: '#6366f1',
+                backgroundColor: 'rgba(99,102,241,0.08)',
+                borderWidth: 2.5,
+                pointBackgroundColor: '#6366f1',
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                tension: 0.4,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { display: false }, ticks: { font: { size: 11 }, color: '#94a3b8' } },
+                y: { grid: { color: '#f1f5f9' }, ticks: { font: { size: 11 }, color: '#94a3b8', stepSize: 1 }, beginAtZero: true }
+            }
+        }
+    });
+
+    // Chart 2: Revenue bar
+    new Chart(document.getElementById('revenueChart'), {
+        type: 'bar',
+        data: {
+            labels: monthLabels,
+            datasets: [{
+                label: 'Doanh thu (₫)',
+                data: monthlyRevenue,
+                backgroundColor: 'rgba(22,163,74,0.18)',
+                borderColor: '#16a34a',
+                borderWidth: 2,
+                borderRadius: 6,
+                borderSkipped: false
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { display: false }, ticks: { font: { size: 11 }, color: '#94a3b8' } },
+                y: { grid: { color: '#f1f5f9' }, ticks: { font: { size: 11 }, color: '#94a3b8' }, beginAtZero: true }
+            }
+        }
+    });
+</script>
+}

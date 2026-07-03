@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Từ chối truy cập";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased" style="background-color:#1e293b">
+    <div class="flex content-center items-center justify-center h-screen text-center">
+        <div>
+            <h1 class="text-white text-5xl font-bold mb-3">403</h1>
+            <p class="text-slate-300 mb-4">Bạn không có quyền truy cập chức năng này.</p>
+            <a asp-controller="Home" asp-action="Dashboard" class="text-white font-bold uppercase text-sm px-6 py-3 rounded shadow" style="background-color:#0284c7">Về trang quản trị</a>
+        </div>
+    </div>
+</body>
+</html>

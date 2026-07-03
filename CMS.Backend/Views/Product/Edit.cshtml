@@ -1,0 +1,206 @@
+@model CMS.Data.Entities.Product
+@{
+    ViewData["Title"] = "Sửa sản phẩm";
+    ViewData["ActiveMenu"] = "product";
+    Layout = "_AdminLayout";
+    var categories = ViewBag.CategoryProducts as Microsoft.AspNetCore.Mvc.Rendering.SelectList;
+}
+
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+    <div class="rounded-t bg-white mb-0 px-6 py-6">
+        <h6 class="text-blueGray-700 text-xl font-bold">Sửa sản phẩm</h6>
+    </div>
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0 bg-white">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreatedDate" />
+            <div asp-validation-summary="ModelOnly" class="text-red-500 text-sm mb-3"></div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Tên sản phẩm</label>
+                <input asp-for="Name" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+                <span asp-validation-for="Name" class="text-red-500 text-xs"></span>
+            </div>
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-6/12 lg:pr-2 mb-3">
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Giá (₫)</label>
+                    <input asp-for="Price" type="number" step="1000" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+                </div>
+                <div class="w-full lg:w-6/12 lg:pl-2 mb-3">
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Tồn kho</label>
+                    <input asp-for="StockQuantity" type="number" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+                </div>
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Ngành hàng</label>
+                <select asp-for="CategoryProductId" asp-items="categories" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full"></select>
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="inline-flex items-center text-blueGray-600 text-sm font-bold">
+                    <input asp-for="IsHot" type="checkbox" class="form-checkbox mr-2" /> Đánh dấu sản phẩm HOT / bán chạy
+                </label>
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Ảnh đại diện</label>
+                <input asp-for="ImageUrl" id="ImageUrl" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full mb-2" />
+                <input type="file" id="imageFile" accept="image/*" class="text-xs" />
+                <span id="uploadStatus" class="text-xs text-blueGray-500 ml-2"></span>
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Mô tả chi tiết</label>
+                <textarea asp-for="Description" class="js-ckeditor"></textarea>
+            </div>
+            <div class="mt-6">
+                <button type="submit" class="text-white font-bold uppercase text-xs px-5 py-3 rounded shadow hover:shadow-md mr-2" style="background-color:#0284c7">Cập nhật</button>
+                <a asp-action="Index" class="text-blueGray-600 font-bold uppercase text-xs px-5 py-3">Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Quản lý phiên bản sản phẩm -->
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0 mt-4">
+    <div class="rounded-t bg-white mb-0 px-6 py-4">
+        <h6 class="text-blueGray-700 text-lg font-bold">Phiên bản sản phẩm (Màu sắc / Dung lượng)</h6>
+        <p class="text-blueGray-400 text-xs mt-1">Thêm các biến thể như màu sắc, RAM/Storage với giá và tồn kho riêng</p>
+    </div>
+    <div class="flex-auto px-4 lg:px-6 py-6 bg-white">
+        <!-- Bảng variants hiện có -->
+        <div id="variantsTableWrap" class="overflow-x-auto mb-5">
+            <table class="w-full text-sm border-collapse" id="variantsTable">
+                <thead>
+                    <tr class="bg-blueGray-50 text-blueGray-500 uppercase text-xs">
+                        <th class="px-3 py-2 text-left">Màu sắc</th>
+                        <th class="px-3 py-2 text-left">Dung lượng / RAM</th>
+                        <th class="px-3 py-2 text-right">Chênh lệch giá</th>
+                        <th class="px-3 py-2 text-right">Tồn kho</th>
+                        <th class="px-3 py-2"></th>
+                    </tr>
+                </thead>
+                <tbody id="variantRows">
+                    <tr id="variantNoData"><td colspan="5" class="text-center py-6 text-blueGray-400">Chưa có phiên bản nào. Thêm bên dưới.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Form thêm variant mới -->
+        <div class="border border-blueGray-200 rounded-lg p-4">
+            <p class="text-xs font-bold uppercase text-blueGray-600 mb-3">Thêm phiên bản mới</p>
+            <div class="flex flex-wrap gap-2 mb-3">
+                <div class="flex-1 min-w-32">
+                    <label class="block text-xs text-blueGray-500 mb-1">Màu sắc</label>
+                    <input id="vColor" placeholder="VD: Đen Titan" class="border-0 px-3 py-2 text-blueGray-600 bg-blueGray-100 rounded text-sm shadow w-full" />
+                </div>
+                <div class="w-24">
+                    <label class="block text-xs text-blueGray-500 mb-1">Mã màu</label>
+                    <div class="relative">
+                        <input id="vColorCode" type="color" value="#1c1c1e" class="w-full h-9 rounded cursor-pointer border-0 shadow" title="Chọn màu CSS" />
+                    </div>
+                </div>
+                <div class="flex-1 min-w-32">
+                    <label class="block text-xs text-blueGray-500 mb-1">Dung lượng / RAM</label>
+                    <input id="vStorage" placeholder="VD: 256GB / 8GB RAM" class="border-0 px-3 py-2 text-blueGray-600 bg-blueGray-100 rounded text-sm shadow w-full" />
+                </div>
+                <div class="w-36">
+                    <label class="block text-xs text-blueGray-500 mb-1">Chênh lệch giá (₫)</label>
+                    <input id="vPriceAdjust" type="number" step="100000" value="0" placeholder="0" class="border-0 px-3 py-2 text-blueGray-600 bg-blueGray-100 rounded text-sm shadow w-full" />
+                </div>
+                <div class="w-28">
+                    <label class="block text-xs text-blueGray-500 mb-1">Tồn kho</label>
+                    <input id="vStock" type="number" value="0" min="0" class="border-0 px-3 py-2 text-blueGray-600 bg-blueGray-100 rounded text-sm shadow w-full" />
+                </div>
+            </div>
+            <button onclick="addVariant()" class="text-white font-bold uppercase text-xs px-5 py-2 rounded shadow hover:shadow-md" style="background:#0284c7">
+                + Thêm phiên bản
+            </button>
+            <span id="vStatus" class="text-xs ml-3 text-blueGray-500"></span>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <partial name="_CKEditorScripts" />
+    <partial name="_ImageUploadScript" />
+
+    <script>
+        const PRODUCT_ID = @Model.Id;
+        const API_BASE = '/api/product-variants';
+
+        function formatVND(n) {
+            if (!n || n === 0) return '—';
+            const sign = n > 0 ? '+' : '';
+            return sign + Number(n).toLocaleString('vi-VN') + '₫';
+        }
+
+        function renderRow(v) {
+            return `<tr data-id="${v.id}" class="border-b border-blueGray-100 hover:bg-blueGray-50">
+                <td class="px-3 py-2">
+                    ${v.colorCode ? `<span style="display:inline-block;width:14px;height:14px;background:${v.colorCode};border-radius:50%;border:1px solid #ccc;vertical-align:middle;margin-right:6px"></span>` : ''}
+                    ${v.color || '<span class="text-blueGray-400 italic">—</span>'}
+                </td>
+                <td class="px-3 py-2">${v.storage || '<span class="text-blueGray-400 italic">—</span>'}</td>
+                <td class="px-3 py-2 text-right">${formatVND(v.priceAdjust)}</td>
+                <td class="px-3 py-2 text-right">${v.stockQuantity}</td>
+                <td class="px-3 py-2 text-right">
+                    <button onclick="deleteVariant(${v.id})" class="text-red-400 hover:text-red-600 text-xs font-bold uppercase">Xóa</button>
+                </td>
+            </tr>`;
+        }
+
+        async function loadVariants() {
+            try {
+                const res = await fetch(`${API_BASE}?productId=${PRODUCT_ID}`);
+                const variants = await res.json();
+                const tbody = document.getElementById('variantRows');
+                if (variants.length === 0) {
+                    tbody.innerHTML = '<tr id="variantNoData"><td colspan="5" class="text-center py-6 text-blueGray-400">Chưa có phiên bản nào. Thêm bên dưới.</td></tr>';
+                } else {
+                    tbody.innerHTML = variants.map(renderRow).join('');
+                }
+            } catch (e) { console.error(e); }
+        }
+
+        async function addVariant() {
+            const color = document.getElementById('vColor').value.trim();
+            const colorCode = document.getElementById('vColorCode').value.trim();
+            const storage = document.getElementById('vStorage').value.trim();
+            const priceAdjust = parseFloat(document.getElementById('vPriceAdjust').value) || 0;
+            const stockQuantity = parseInt(document.getElementById('vStock').value) || 0;
+            const status = document.getElementById('vStatus');
+
+            if (!color && !storage) {
+                status.textContent = '⚠ Nhập ít nhất Màu sắc hoặc Dung lượng.';
+                status.style.color = '#ef4444';
+                return;
+            }
+            status.textContent = 'Đang lưu...';
+            try {
+                const res = await fetch(API_BASE, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ productId: PRODUCT_ID, color, colorCode, storage, priceAdjust, stockQuantity })
+                });
+                if (!res.ok) throw new Error(await res.text());
+                document.getElementById('vColor').value = '';
+                document.getElementById('vStorage').value = '';
+                document.getElementById('vPriceAdjust').value = '0';
+                document.getElementById('vStock').value = '0';
+                status.textContent = '✓ Đã thêm!';
+                status.style.color = '#22c55e';
+                setTimeout(() => { status.textContent = ''; }, 2500);
+                loadVariants();
+            } catch (e) {
+                status.textContent = 'Lỗi: ' + e.message;
+                status.style.color = '#ef4444';
+            }
+        }
+
+        async function deleteVariant(id) {
+            if (!confirm('Xóa phiên bản này?')) return;
+            await fetch(`${API_BASE}/${id}`, { method: 'DELETE' });
+            loadVariants();
+        }
+
+        loadVariants();
+    </script>
+}

@@ -1,0 +1,45 @@
+@model CMS.Data.Entities.User
+@{
+    ViewData["Title"] = "Sửa tài khoản quản trị";
+    ViewData["ActiveMenu"] = "user";
+    Layout = "_AdminLayout";
+}
+
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+    <div class="rounded-t bg-white mb-0 px-6 py-6">
+        <h6 class="text-blueGray-700 text-xl font-bold">Sửa tài khoản quản trị</h6>
+    </div>
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0 bg-white">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div asp-validation-summary="ModelOnly" class="text-red-500 text-sm mb-3"></div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Tên đăng nhập</label>
+                <input asp-for="Username" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+                <span asp-validation-for="Username" class="text-red-500 text-xs"></span>
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Mật khẩu mới</label>
+                <input name="NewPassword" type="password" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" placeholder="Để trống nếu không đổi mật khẩu" />
+                <p class="text-xs text-blueGray-400 mt-1">Nhập để đặt lại mật khẩu (sẽ băm BCrypt). Để trống = giữ mật khẩu cũ.</p>
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Họ tên</label>
+                <input asp-for="FullName" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Vai trò</label>
+                <select asp-for="Role" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full">
+                    <option value="Admin">Admin (Quản trị viên)</option>
+                    <option value="Editor">Editor (Biên tập viên)</option>
+                </select>
+            </div>
+            <div class="mt-6">
+                <button type="submit" class="text-white font-bold uppercase text-xs px-5 py-3 rounded shadow hover:shadow-md mr-2" style="background-color:#0284c7">Cập nhật</button>
+                <a asp-action="Index" class="text-blueGray-600 font-bold uppercase text-xs px-5 py-3">Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

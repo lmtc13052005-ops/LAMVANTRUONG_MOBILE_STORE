@@ -1,0 +1,42 @@
+@model CMS.Data.Entities.Customer
+@{
+    ViewData["Title"] = "Sửa khách hàng";
+    ViewData["ActiveMenu"] = "customer";
+    Layout = "_AdminLayout";
+}
+
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+    <div class="rounded-t bg-white mb-0 px-6 py-6">
+        <h6 class="text-blueGray-700 text-xl font-bold">Sửa thông tin khách hàng</h6>
+    </div>
+    <div class="flex-auto px-4 lg:px-10 py-10 pt-0 bg-white">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="Password" />
+            <div asp-validation-summary="ModelOnly" class="text-red-500 text-sm mb-3"></div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Họ tên</label>
+                <input asp-for="FullName" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Email</label>
+                <input asp-for="Email" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+                <span asp-validation-for="Email" class="text-red-500 text-xs"></span>
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Điện thoại</label>
+                <input asp-for="Phone" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+            </div>
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2">Địa chỉ</label>
+                <input asp-for="Address" class="border-0 px-3 py-3 text-blueGray-600 bg-white rounded text-sm shadow w-full" />
+            </div>
+            <div class="mt-6">
+                <button type="submit" class="text-white font-bold uppercase text-xs px-5 py-3 rounded shadow hover:shadow-md mr-2" style="background-color:#0284c7">Cập nhật</button>
+                <a asp-action="Index" class="text-blueGray-600 font-bold uppercase text-xs px-5 py-3">Hủy</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

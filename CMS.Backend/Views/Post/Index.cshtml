@@ -1,0 +1,64 @@
+@model IEnumerable<CMS.Data.Entities.Post>
+@{
+    ViewData["Title"] = "Bài viết";
+    ViewData["ActiveMenu"] = "post";
+    Layout = "_AdminLayout";
+    var categories = ViewBag.Categories as IEnumerable<CMS.Data.Entities.Category>;
+    int? selectedId = ViewBag.SelectedCategoryId as int?;
+}
+
+<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+    <div class="rounded-t mb-0 px-4 py-3 border-0">
+        <div class="flex flex-wrap items-center">
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <h3 class="font-semibold text-base text-blueGray-700">Danh sách bài viết</h3>
+            </div>
+            <a asp-action="Create" class="text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md" style="background-color:#0284c7">
+                <i class="fas fa-plus mr-1"></i> Viết bài mới
+            </a>
+        </div>
+    </div>
+
+    @if (categories != null)
+    {
+        <div class="px-4 pb-2 flex flex-wrap gap-2">
+            <a asp-action="Index" class="text-xs font-semibold px-3 py-1 rounded-full @(selectedId == null ? "text-white" : "text-blueGray-600 bg-blueGray-100")" style="@(selectedId == null ? "background-color:#0284c7" : "")">Tất cả</a>
+            @foreach (var c in categories)
+            {
+                <a asp-action="Index" asp-route-categoryId="@c.Id" class="text-xs font-semibold px-3 py-1 rounded-full @(selectedId == c.Id ? "text-white" : "text-blueGray-600 bg-blueGray-100")" style="@(selectedId == c.Id ? "background-color:#0284c7" : "")">@c.Name</a>
+            }
+        </div>
+    }
+
+    <div class="block w-full overflow-x-auto">
+        <table class="items-center w-full bg-transparent border-collapse">
+            <thead>
+                <tr>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">ID</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Tiêu đề</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Danh mục</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Ngày tạo</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="hover:bg-blueGray-50">
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs">@item.Id</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs font-bold text-blueGray-600">@item.Title</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs text-blueGray-500">@item.Category?.Name</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs">@item.CreatedDate.ToString("dd/MM/yyyy")</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs whitespace-nowrap">
+                            <a asp-action="Details" asp-route-id="@item.Id" class="text-blueGray-500 font-semibold mr-3"><i class="fas fa-eye"></i> Xem</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="text-lightBlue-600 font-semibold mr-3"><i class="fas fa-pen"></i> Sửa</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-500 font-semibold"
+                               onclick="return confirm('Xóa bài viết này?')"><i class="fas fa-trash"></i> Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <partial name="_Pagination" />
+</div>

@@ -1,0 +1,31 @@
+@*
+    Upload ảnh đại diện: chọn file (#imageFile) -> POST /Upload/Image -> gán URL vào ô #ImageUrl.
+    Dùng trong @@section Scripts của form có cặp input #imageFile + #ImageUrl.
+*@
+<script>
+    (function () {
+        var fileInput = document.getElementById('imageFile');
+        var urlInput = document.getElementById('ImageUrl');
+        var status = document.getElementById('uploadStatus');
+        if (!fileInput || !urlInput) return;
+
+        fileInput.addEventListener('change', function () {
+            if (!fileInput.files.length) return;
+            var data = new FormData();
+            data.append('file', fileInput.files[0]);
+            if (status) status.textContent = 'Đang tải ảnh...';
+
+            fetch('/Upload/Image', { method: 'POST', body: data })
+                .then(function (r) { return r.json(); })
+                .then(function (res) {
+                    if (res.success) {
+                        urlInput.value = res.url;
+                        if (status) status.textContent = '✅ Đã tải: ' + res.url;
+                    } else {
+                        if (status) status.textContent = '❌ ' + (res.message || 'Lỗi tải ảnh');
+                    }
+                })
+                .catch(function () { if (status) status.textContent = '❌ Lỗi kết nối khi tải ảnh'; });
+        });
+    })();
+</script>

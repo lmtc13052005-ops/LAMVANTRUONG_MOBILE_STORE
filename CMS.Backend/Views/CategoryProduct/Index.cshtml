@@ -1,0 +1,48 @@
+@model IEnumerable<CMS.Data.Entities.CategoryProduct>
+@{
+    ViewData["Title"] = "Danh mục sản phẩm";
+    ViewData["ActiveMenu"] = "categoryproduct";
+    Layout = "_AdminLayout";
+}
+
+<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+    <div class="rounded-t mb-0 px-4 py-3 border-0">
+        <div class="flex flex-wrap items-center">
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <h3 class="font-semibold text-base text-blueGray-700">Danh mục sản phẩm (ngành hàng)</h3>
+            </div>
+            <a asp-action="Create" class="text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none" style="background-color:#0284c7">
+                <i class="fas fa-plus mr-1"></i> Thêm mới
+            </a>
+        </div>
+    </div>
+    <div class="block w-full overflow-x-auto">
+        <table class="items-center w-full bg-transparent border-collapse">
+            <thead>
+                <tr>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">ID</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Tên</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Mô tả</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Thứ tự</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="hover:bg-blueGray-50">
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs whitespace-nowrap">@item.Id</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs font-bold text-blueGray-600">@item.Name</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs text-blueGray-500">@item.Description</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs">@item.DisplayOrder</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs whitespace-nowrap">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="text-lightBlue-600 font-semibold mr-3"><i class="fas fa-pen"></i> Sửa</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-500 font-semibold"
+                               onclick="return confirm('Xóa danh mục này? (Không xóa được nếu còn sản phẩm con)')"><i class="fas fa-trash"></i> Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

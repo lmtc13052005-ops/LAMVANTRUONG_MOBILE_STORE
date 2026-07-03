@@ -1,0 +1,30 @@
+D:\LVT\TruongCMS.MobileStore\CMS.Data\bin\Debug\net8.0\CMS.Data.deps.json
+D:\LVT\TruongCMS.MobileStore\CMS.Data\bin\Debug\net8.0\CMS.Data.dll
+D:\LVT\TruongCMS.MobileStore\CMS.Data\bin\Debug\net8.0\CMS.Data.pdb
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.AssemblyInfoInputs.cache
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.AssemblyInfo.cs
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.csproj.CoreCompileInputs.cache
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.dll
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\refint\CMS.Data.dll
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.pdb
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\ref\CMS.Data.dll
+D:\LVT\TruongCMS.MobileStore\CMS.Data\bin\Debug\net8.0\CMS.Data.runtimeconfig.json
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.csproj.AssemblyReference.cache
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.sourcelink.json
+D:\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.genruntimeconfig.cache
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\bin\Debug\net8.0\CMS.Data.deps.json
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\bin\Debug\net8.0\CMS.Data.runtimeconfig.json
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\bin\Debug\net8.0\CMS.Data.dll
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\bin\Debug\net8.0\CMS.Data.pdb
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.csproj.AssemblyReference.cache
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.AssemblyInfoInputs.cache
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.AssemblyInfo.cs
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.csproj.CoreCompileInputs.cache
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.sourcelink.json
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.dll
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\refint\CMS.Data.dll
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.pdb
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\CMS.Data.genruntimeconfig.cache
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Data\obj\Debug\net8.0\ref\CMS.Data.dll

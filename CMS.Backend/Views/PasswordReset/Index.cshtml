@@ -1,0 +1,108 @@
+@using CMS.Data.Entities
+@model List<PasswordResetRequest>
+@{
+    Layout = "_AdminLayout";
+
+    string StatusText(int s) => s switch { 0 => "Chờ duyệt", 1 => "Đã duyệt", 2 => "Từ chối", _ => "?" };
+    string StatusStyle(int s) => s switch {
+        0 => "background:#fef3c7;color:#d97706;",
+        1 => "background:#dcfce7;color:#16a34a;",
+        2 => "background:#fee2e2;color:#dc2626;",
+        _ => ""
+    };
+}
+
+@if (TempData["Success"] != null)
+{
+    <div style="background:#dcfce7;color:#166534;padding:12px 18px;border-radius:8px;margin-bottom:18px;font-size:13px;font-weight:600;">
+        <i class="fas fa-check-circle" style="margin-right:8px;"></i>@TempData["Success"]
+    </div>
+}
+@if (TempData["Error"] != null)
+{
+    <div style="background:#fee2e2;color:#991b1b;padding:12px 18px;border-radius:8px;margin-bottom:18px;font-size:13px;font-weight:600;">
+        <i class="fas fa-exclamation-circle" style="margin-right:8px;"></i>@TempData["Error"]
+    </div>
+}
+
+<div style="background:#fff;border-radius:14px;border:1px solid #f1f5f9;box-shadow:0 1px 3px rgba(0,0,0,.05);overflow:hidden;">
+    <div style="padding:18px 22px;border-bottom:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;">
+        <div>
+            <div style="font-size:14px;font-weight:700;color:#1e293b;">Danh sách yêu cầu</div>
+            <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Tổng: @Model.Count yêu cầu — Chờ duyệt: @Model.Count(r => r.Status == 0)</div>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div style="padding:48px;text-align:center;color:#94a3b8;">
+            <i class="fas fa-inbox" style="font-size:32px;margin-bottom:12px;display:block;"></i>
+            Chưa có yêu cầu nào
+        </div>
+    }
+    else
+    {
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+                <tr style="background:#f8fafc;">
+                    <th style="padding:10px 18px;text-align:left;font-size:11.5px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;">#</th>
+                    <th style="padding:10px 18px;text-align:left;font-size:11.5px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;">Họ tên</th>
+                    <th style="padding:10px 18px;text-align:left;font-size:11.5px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;">Email</th>
+                    <th style="padding:10px 18px;text-align:left;font-size:11.5px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;">SĐT</th>
+                    <th style="padding:10px 18px;text-align:left;font-size:11.5px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;">Ngày gửi</th>
+                    <th style="padding:10px 18px;text-align:left;font-size:11.5px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;">Trạng thái</th>
+                    <th style="padding:10px 18px;text-align:left;font-size:11.5px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var r in Model)
+                {
+                    <tr style="border-top:1px solid #f8fafc;">
+                        <td style="padding:12px 18px;color:#6366f1;font-weight:700;">#@r.Id</td>
+                        <td style="padding:12px 18px;color:#334155;font-weight:600;">@r.FullName</td>
+                        <td style="padding:12px 18px;color:#334155;">@r.Email</td>
+                        <td style="padding:12px 18px;color:#334155;">@(r.Phone ?? "—")</td>
+                        <td style="padding:12px 18px;color:#94a3b8;font-size:12px;">@r.RequestDate.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td style="padding:12px 18px;">
+                            <span style="font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;@StatusStyle(r.Status)">@StatusText(r.Status)</span>
+                            @if (r.Status == 1 && r.ProcessedDate.HasValue)
+                            {
+                                <div style="font-size:11px;color:#94a3b8;margin-top:3px;">@r.ProcessedDate.Value.ToString("dd/MM HH:mm")</div>
+                            }
+                            @if (r.Status == 2 && !string.IsNullOrEmpty(r.Note))
+                            {
+                                <div style="font-size:11px;color:#94a3b8;margin-top:3px;">@r.Note</div>
+                            }
+                        </td>
+                        <td style="padding:12px 18px;">
+                            @if (r.Status == 0)
+                            {
+                                <div style="display:flex;gap:8px;align-items:center;">
+                                    <form asp-action="Approve" asp-route-id="@r.Id" method="post" style="display:inline;">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" onclick="return confirm('Duyệt yêu cầu đặt lại mật khẩu cho @r.Email?')"
+                                            style="padding:5px 12px;background:#16a34a;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">
+                                            <i class="fas fa-check"></i> Duyệt
+                                        </button>
+                                    </form>
+                                    <form asp-action="Reject" asp-route-id="@r.Id" method="post" style="display:inline;">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="note" value="Admin từ chối." />
+                                        <button type="submit" onclick="return confirm('Từ chối yêu cầu của @r.Email?')"
+                                            style="padding:5px 12px;background:#ef4444;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">
+                                            <i class="fas fa-times"></i> Từ chối
+                                        </button>
+                                    </form>
+                                </div>
+                            }
+                            else
+                            {
+                                <span style="font-size:12px;color:#94a3b8;">Đã xử lý</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

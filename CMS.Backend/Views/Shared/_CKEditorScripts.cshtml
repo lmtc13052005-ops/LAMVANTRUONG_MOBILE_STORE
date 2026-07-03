@@ -1,0 +1,15 @@
+@*
+    Khởi tạo CKEditor 5 cho mọi <textarea class="js-ckeditor"> (tiêu chí #15).
+    Tích hợp upload ảnh qua SimpleUploadAdapter -> /Upload/CKEditorImage (tiêu chí #35).
+    Dùng trong @@section Scripts của các form Create/Edit (Post, Product).
+*@
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+<script>
+    document.querySelectorAll('.js-ckeditor').forEach(function (el) {
+        ClassicEditor
+            .create(el, {
+                simpleUpload: { uploadUrl: '/Upload/CKEditorImage' }
+            })
+            .catch(function (err) { console.error(err); });
+    });
+</script>

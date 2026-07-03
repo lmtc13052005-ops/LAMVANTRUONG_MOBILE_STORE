@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: #f0f2f5;
+  color: #1a202c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+img { display: block; max-width: 100%; }
+input, select { font-family: inherit; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 3px; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: none; }
+}
+
+.prod-card { animation: fadeInUp 0.4s ease both; }
+.prod-card:hover { box-shadow: 0 10px 32px rgba(0,0,0,.13) !important; }
+.prod-card:hover .prod-img { transform: scale(1.06); }
+.nav-link:hover { color: #f6ad55 !important; }
+.footer-link:hover { color: #f6ad55 !important; }
+.social-btn:hover { border-color: #f6ad55 !important; color: #f6ad55 !important; }
+.wishlist-btn:hover { color: #e53e3e !important; background: #fff5f5 !important; }
+.hero-btn-prev:hover, .hero-btn-next:hover { background: rgba(246,173,85,0.2) !important; border-color: #f6ad55 !important; }

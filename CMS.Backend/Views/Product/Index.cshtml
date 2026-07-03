@@ -1,0 +1,58 @@
+@model IEnumerable<CMS.Data.Entities.Product>
+@{
+    ViewData["Title"] = "Sản phẩm";
+    ViewData["ActiveMenu"] = "product";
+    Layout = "_AdminLayout";
+}
+
+<div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+    <div class="rounded-t mb-0 px-4 py-3 border-0">
+        <div class="flex flex-wrap items-center">
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <h3 class="font-semibold text-base text-blueGray-700">Danh sách sản phẩm</h3>
+            </div>
+            <a asp-action="Create" class="text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md" style="background-color:#0284c7">
+                <i class="fas fa-plus mr-1"></i> Thêm sản phẩm
+            </a>
+        </div>
+    </div>
+    <div class="block w-full overflow-x-auto">
+        <table class="items-center w-full bg-transparent border-collapse">
+            <thead>
+                <tr>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">ID</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Tên sản phẩm</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Ngành hàng</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Giá</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Tồn kho</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Hot</th>
+                    <th class="px-6 py-3 text-xs uppercase font-semibold text-left bg-blueGray-50 text-blueGray-500 border-b border-blueGray-100">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="hover:bg-blueGray-50">
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs">@item.Id</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs font-bold text-blueGray-600">@item.Name</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs text-blueGray-500">@item.CategoryProduct?.Name</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs">@item.Price.ToString("#,##0") ₫</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs">@item.StockQuantity</td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs">
+                            @if (item.IsHot)
+                            {
+                                <span class="text-xs font-semibold inline-block py-1 px-2 rounded text-red-600 bg-red-100">HOT</span>
+                            }
+                        </td>
+                        <td class="border-t border-blueGray-100 px-6 py-3 text-xs whitespace-nowrap">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="text-lightBlue-600 font-semibold mr-3"><i class="fas fa-pen"></i> Sửa</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="text-red-500 font-semibold"
+                               onclick="return confirm('Xóa sản phẩm này?')"><i class="fas fa-trash"></i> Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <partial name="_Pagination" />
+</div>
