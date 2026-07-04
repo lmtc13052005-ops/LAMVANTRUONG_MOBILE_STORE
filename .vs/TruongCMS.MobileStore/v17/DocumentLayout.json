@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C3BBCFA-BC7B-4197-B557-EE919C61396E}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\my hp\\desktop\\lvt\\lvt\\truongcms.mobilestore\\cms.backend\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C3BBCFA-BC7B-4197-B557-EE919C61396E}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C3BBCFA-BC7B-4197-B557-EE919C61396E}|CMS.Backend\\CMS.Backend.csproj|c:\\users\\my hp\\desktop\\lvt\\lvt\\truongcms.mobilestore\\cms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C3BBCFA-BC7B-4197-B557-EE919C61396E}|CMS.Backend\\CMS.Backend.csproj|solutionrelative:cms.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "CMS.Backend\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\DbInitializer.cs",
+              "RelativeToolTip": "CMS.Backend\\DbInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T02:03:45.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\Program.cs",
+              "RelativeDocumentMoniker": "CMS.Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\Program.cs",
+              "RelativeToolTip": "CMS.Backend\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T19:23:31.777Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

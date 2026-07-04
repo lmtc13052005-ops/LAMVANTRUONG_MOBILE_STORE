@@ -31,6 +31,10 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 // ===== IMemoryCache cho OTP quên mật khẩu (#46) =====
 builder.Services.AddMemoryCache();
 
+// ===== Swagger: tài liệu + test API tại /swagger =====
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 // ===== BUỔI 6: CORS cho ReactJS Frontend (#22) =====
 builder.Services.AddCors(options =>
 {
@@ -48,6 +52,13 @@ var app = builder.Build();
 DbInitializer.SeedAdminUsers(app);
 
 // Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    // Chỉ bật Swagger UI ở môi trường Development
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

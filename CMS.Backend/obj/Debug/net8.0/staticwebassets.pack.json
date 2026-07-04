@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\033832f7d3744f07a1c9c0fee5d31260.jpg",
+      "PackagePath": "staticwebassets\\uploads\\033832f7d3744f07a1c9c0fee5d31260.jpg"
+    },
+    {
       "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\0a308fdd2a4746f0b23065bfa5a739a9.webp",
       "PackagePath": "staticwebassets\\uploads\\0a308fdd2a4746f0b23065bfa5a739a9.webp"
     },
@@ -269,8 +273,24 @@
       "PackagePath": "staticwebassets\\uploads\\6fcf20f9e73740309fa99e59f7a42a8d.jpg"
     },
     {
+      "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\7a37fcd852d047448935ce2c10e236e5.webp",
+      "PackagePath": "staticwebassets\\uploads\\7a37fcd852d047448935ce2c10e236e5.webp"
+    },
+    {
       "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\7a5cd63ada454badbe0af589bd0a5adc.webp",
       "PackagePath": "staticwebassets\\uploads\\7a5cd63ada454badbe0af589bd0a5adc.webp"
+    },
+    {
+      "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\882adeeee8a149098d76faeac5e16f32.webp",
+      "PackagePath": "staticwebassets\\uploads\\882adeeee8a149098d76faeac5e16f32.webp"
+    },
+    {
+      "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\a40bdc5046994612b9ce326792d8c2d4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a40bdc5046994612b9ce326792d8c2d4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\a4a337c9f26c4e6aa79ad5d44d3dd4c6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a4a337c9f26c4e6aa79ad5d44d3dd4c6.jpg"
     },
     {
       "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\b32d4846901d4d2fb97bacc273382395.jpg",
@@ -279,6 +299,10 @@
     {
       "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\d1e1966f726346c0a0df8c260f834075.webp",
       "PackagePath": "staticwebassets\\uploads\\d1e1966f726346c0a0df8c260f834075.webp"
+    },
+    {
+      "Id": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\f4c52e9a5179461583d6d71c7a69c4e8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\f4c52e9a5179461583d6d71c7a69c4e8.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CMS.Backend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

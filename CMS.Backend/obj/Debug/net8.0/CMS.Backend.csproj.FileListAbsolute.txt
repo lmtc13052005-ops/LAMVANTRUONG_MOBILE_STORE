@@ -310,3 +310,8 @@ C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\obj\Debug\net8.
 C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\obj\Debug\net8.0\CMS.Backend.pdb
 C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\obj\Debug\net8.0\CMS.Backend.genruntimeconfig.cache
 C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\obj\Debug\net8.0\ref\CMS.Backend.dll
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\MY HP\Desktop\LVT\LVT\TruongCMS.MobileStore\CMS.Backend\obj\Debug\net8.0\CMS.Backend.MvcApplicationPartsAssemblyInfo.cs

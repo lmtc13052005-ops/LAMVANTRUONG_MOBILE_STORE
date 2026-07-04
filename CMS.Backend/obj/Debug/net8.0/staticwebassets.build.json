@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EDAx6EyI/vBqgtQjixqXFc+vk+X44kKpPKd7t6HMtOs=",
+  "Hash": "HQqmNGRUpV3PIr/lAKNNZTZOuD/0nEDfVko8twB4P60=",
   "Source": "CMS.Backend",
   "BasePath": "_content/CMS.Backend",
   "Mode": "Default",
@@ -1319,6 +1319,27 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\033832f7d3744f07a1c9c0fee5d31260.jpg",
+      "SourceId": "CMS.Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\",
+      "BasePath": "_content/CMS.Backend",
+      "RelativePath": "uploads/033832f7d3744f07a1c9c0fee5d31260#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ffm3zs4ixv",
+      "Integrity": "tbiI5xso3P2CXCj3GtUeBa2oyXoqxv5Vlan168/lpHI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\033832f7d3744f07a1c9c0fee5d31260.jpg"
+    },
+    {
       "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\0a308fdd2a4746f0b23065bfa5a739a9.webp",
       "SourceId": "CMS.Backend",
       "SourceType": "Discovered",
@@ -1445,6 +1466,27 @@
       "OriginalItemSpec": "wwwroot\\uploads\\6fcf20f9e73740309fa99e59f7a42a8d.jpg"
     },
     {
+      "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\7a37fcd852d047448935ce2c10e236e5.webp",
+      "SourceId": "CMS.Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\",
+      "BasePath": "_content/CMS.Backend",
+      "RelativePath": "uploads/7a37fcd852d047448935ce2c10e236e5#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dg89crp8vl",
+      "Integrity": "DfsmvlPKPFMIJePN14ZiEImgTt7aZEHqyYFCJGRJlKg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\7a37fcd852d047448935ce2c10e236e5.webp"
+    },
+    {
       "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\7a5cd63ada454badbe0af589bd0a5adc.webp",
       "SourceId": "CMS.Backend",
       "SourceType": "Discovered",
@@ -1464,6 +1506,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\7a5cd63ada454badbe0af589bd0a5adc.webp"
+    },
+    {
+      "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\882adeeee8a149098d76faeac5e16f32.webp",
+      "SourceId": "CMS.Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\",
+      "BasePath": "_content/CMS.Backend",
+      "RelativePath": "uploads/882adeeee8a149098d76faeac5e16f32#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "q8ao870mty",
+      "Integrity": "2k1XPxZd44h+8z4r5AAZAVn3ntfoUt/S12eLnoaPUFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\882adeeee8a149098d76faeac5e16f32.webp"
+    },
+    {
+      "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\a40bdc5046994612b9ce326792d8c2d4.jpg",
+      "SourceId": "CMS.Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\",
+      "BasePath": "_content/CMS.Backend",
+      "RelativePath": "uploads/a40bdc5046994612b9ce326792d8c2d4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "77t9bir6eg",
+      "Integrity": "E5/a5Ohly8hsIrasSWqBWmUGZYV7CUGfIjirgpTSP5Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\a40bdc5046994612b9ce326792d8c2d4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\a4a337c9f26c4e6aa79ad5d44d3dd4c6.jpg",
+      "SourceId": "CMS.Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\",
+      "BasePath": "_content/CMS.Backend",
+      "RelativePath": "uploads/a4a337c9f26c4e6aa79ad5d44d3dd4c6#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "a1fc1y7p1v",
+      "Integrity": "HvDWDVT1sOksiDIIapbjR/7c9+SMsLXrdqWWLzoO66c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\a4a337c9f26c4e6aa79ad5d44d3dd4c6.jpg"
     },
     {
       "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\b32d4846901d4d2fb97bacc273382395.jpg",
@@ -1506,6 +1611,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\d1e1966f726346c0a0df8c260f834075.webp"
+    },
+    {
+      "Identity": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\f4c52e9a5179461583d6d71c7a69c4e8.jpg",
+      "SourceId": "CMS.Backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\",
+      "BasePath": "_content/CMS.Backend",
+      "RelativePath": "uploads/f4c52e9a5179461583d6d71c7a69c4e8#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n2bztcbs44",
+      "Integrity": "MUB3ZnwdrjeBzjAGaT/VsUUgcZ9IxewYQnLmQx36Kd0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\f4c52e9a5179461583d6d71c7a69c4e8.jpg"
     }
   ],
   "Endpoints": [
@@ -6594,6 +6720,88 @@
       ]
     },
     {
+      "Route": "uploads/033832f7d3744f07a1c9c0fee5d31260.ffm3zs4ixv.jpg",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\033832f7d3744f07a1c9c0fee5d31260.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "91499"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tbiI5xso3P2CXCj3GtUeBa2oyXoqxv5Vlan168/lpHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:08:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ffm3zs4ixv"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/033832f7d3744f07a1c9c0fee5d31260.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tbiI5xso3P2CXCj3GtUeBa2oyXoqxv5Vlan168/lpHI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/033832f7d3744f07a1c9c0fee5d31260.jpg",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\033832f7d3744f07a1c9c0fee5d31260.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "91499"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tbiI5xso3P2CXCj3GtUeBa2oyXoqxv5Vlan168/lpHI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:08:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tbiI5xso3P2CXCj3GtUeBa2oyXoqxv5Vlan168/lpHI="
+        }
+      ]
+    },
+    {
       "Route": "uploads/0a308fdd2a4746f0b23065bfa5a739a9.dg89crp8vl.webp",
       "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\0a308fdd2a4746f0b23065bfa5a739a9.webp",
       "Selectors": [],
@@ -7086,6 +7294,88 @@
       ]
     },
     {
+      "Route": "uploads/7a37fcd852d047448935ce2c10e236e5.dg89crp8vl.webp",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\7a37fcd852d047448935ce2c10e236e5.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9196"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DfsmvlPKPFMIJePN14ZiEImgTt7aZEHqyYFCJGRJlKg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:08:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dg89crp8vl"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/7a37fcd852d047448935ce2c10e236e5.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DfsmvlPKPFMIJePN14ZiEImgTt7aZEHqyYFCJGRJlKg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/7a37fcd852d047448935ce2c10e236e5.webp",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\7a37fcd852d047448935ce2c10e236e5.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9196"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DfsmvlPKPFMIJePN14ZiEImgTt7aZEHqyYFCJGRJlKg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:08:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DfsmvlPKPFMIJePN14ZiEImgTt7aZEHqyYFCJGRJlKg="
+        }
+      ]
+    },
+    {
       "Route": "uploads/7a5cd63ada454badbe0af589bd0a5adc.ewhziaaqas.webp",
       "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\7a5cd63ada454badbe0af589bd0a5adc.webp",
       "Selectors": [],
@@ -7164,6 +7454,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-ouC7LbfbAxXpfxm6t5kMP/XP/xoV1Vrfd938oo3KOjM="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/882adeeee8a149098d76faeac5e16f32.q8ao870mty.webp",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\882adeeee8a149098d76faeac5e16f32.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8734"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2k1XPxZd44h+8z4r5AAZAVn3ntfoUt/S12eLnoaPUFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:08:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "q8ao870mty"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/882adeeee8a149098d76faeac5e16f32.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2k1XPxZd44h+8z4r5AAZAVn3ntfoUt/S12eLnoaPUFU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/882adeeee8a149098d76faeac5e16f32.webp",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\882adeeee8a149098d76faeac5e16f32.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8734"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2k1XPxZd44h+8z4r5AAZAVn3ntfoUt/S12eLnoaPUFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:08:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2k1XPxZd44h+8z4r5AAZAVn3ntfoUt/S12eLnoaPUFU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a40bdc5046994612b9ce326792d8c2d4.77t9bir6eg.jpg",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\a40bdc5046994612b9ce326792d8c2d4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41438"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E5/a5Ohly8hsIrasSWqBWmUGZYV7CUGfIjirgpTSP5Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:09:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "77t9bir6eg"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/a40bdc5046994612b9ce326792d8c2d4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-E5/a5Ohly8hsIrasSWqBWmUGZYV7CUGfIjirgpTSP5Q="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a40bdc5046994612b9ce326792d8c2d4.jpg",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\a40bdc5046994612b9ce326792d8c2d4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41438"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E5/a5Ohly8hsIrasSWqBWmUGZYV7CUGfIjirgpTSP5Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:09:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-E5/a5Ohly8hsIrasSWqBWmUGZYV7CUGfIjirgpTSP5Q="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a4a337c9f26c4e6aa79ad5d44d3dd4c6.a1fc1y7p1v.jpg",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\a4a337c9f26c4e6aa79ad5d44d3dd4c6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36574"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HvDWDVT1sOksiDIIapbjR/7c9+SMsLXrdqWWLzoO66c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:08:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "a1fc1y7p1v"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/a4a337c9f26c4e6aa79ad5d44d3dd4c6.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HvDWDVT1sOksiDIIapbjR/7c9+SMsLXrdqWWLzoO66c="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/a4a337c9f26c4e6aa79ad5d44d3dd4c6.jpg",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\a4a337c9f26c4e6aa79ad5d44d3dd4c6.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "36574"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HvDWDVT1sOksiDIIapbjR/7c9+SMsLXrdqWWLzoO66c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:08:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HvDWDVT1sOksiDIIapbjR/7c9+SMsLXrdqWWLzoO66c="
         }
       ]
     },
@@ -7328,6 +7864,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-BFwSCVhe+YHsa3MuO5sAI9AMXRfOsAVhTQQHmnwRo/Q="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f4c52e9a5179461583d6d71c7a69c4e8.jpg",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\f4c52e9a5179461583d6d71c7a69c4e8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3551397"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MUB3ZnwdrjeBzjAGaT/VsUUgcZ9IxewYQnLmQx36Kd0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:07:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MUB3ZnwdrjeBzjAGaT/VsUUgcZ9IxewYQnLmQx36Kd0="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/f4c52e9a5179461583d6d71c7a69c4e8.n2bztcbs44.jpg",
+      "AssetFile": "C:\\Users\\MY HP\\Desktop\\LVT\\LVT\\TruongCMS.MobileStore\\CMS.Backend\\wwwroot\\uploads\\f4c52e9a5179461583d6d71c7a69c4e8.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3551397"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MUB3ZnwdrjeBzjAGaT/VsUUgcZ9IxewYQnLmQx36Kd0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 03 Jul 2026 07:07:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "n2bztcbs44"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/f4c52e9a5179461583d6d71c7a69c4e8.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MUB3ZnwdrjeBzjAGaT/VsUUgcZ9IxewYQnLmQx36Kd0="
         }
       ]
     }
